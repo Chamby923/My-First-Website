@@ -6,112 +6,159 @@
   <title>Martín</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="stars" id="stars"></div>
+
   <header class="hero">
-    <h1 class="hero-title">Hola,<br>soy Martín</h1>
+    <div class="orb orb-hero"></div>
+    <h1 class="hero-title">Hola,<br>soy <em class="accent-word">Martín</em></h1>
     <div class="img-box hero-img" aria-label="Espacio para foto"></div>
     <a href="#conoceme" class="scroll-btn">▼ Conóceme ▼</a>
   </header>
 
-  <section id="conoceme" class="row">
-    <div class="text-col">
-      <h2 class="section-title">¿Quién soy?</h2>
-      <p>Mi nombre es Martín, tengo 15 años y soy un chico apasionado por la ciencia y como el universo funciona. Me caracterizo por nunca rendirme ante problemas, siempre entender el porque de las cosas y ser introvertido cuando me conviene jeje.</p>
-    </div>
-    <div class="img-box"></div>
-  </section>
-
-  <section class="row gustos">
-    <div class="img-box"></div>
-    <div class="text-col text-right">
-      <h2 class="section-title">Mis gustos</h2>
-      <p>A mi me gusta mucho la ciencia: la física, el ambiente, la matemática y, en especial la astronautica. Me encantan los aviones, usar FlightRadar24 para seguirlos y descubrir sus rutas, además de estar enterado los proximos proyectos en el mundo espacial, de agencias como la NASA o la ESA.</p>
-      <p>Tambien me encantan los videojuegos, como Minecraft, Terraria, Roblox, The Last of Us 1 &amp; 2, Pokémon, entre otros. En mi corazón siempre estará un lugar especial para Minecraft, el cual fue el primer videojuego con el que jugué y me enamoré, en es especial porque puedes decidir lo que quieres hacer con tu destino en el mundo cúbico.</p>
-      <p>También me encanta comer. Mi comida favorita es el pabellón venezolano, seguido del tallarín verde, el ceviche, las arepas y la causa peruana. Existen más platos que me gustan y los como con gusto, como el lomo saltado y la cachapa, los cuales ocuparian las "menciones honoríficas".</p>
+  <section id="conoceme" class="section-shell">
+    <div class="row panel">
+      <div class="orb orb-left"></div>
+      <div class="text-col">
+        <h2 class="section-title">¿Quién soy?</h2>
+        <p>Mi nombre es Martín, tengo 15 años y soy un chico apasionado por la <em class="accent-word">ciencia</em> y como el universo funciona. Me caracterizo por nunca rendirme ante problemas, siempre entender el porque de las cosas y ser introvertido cuando me conviene jeje.</p>
+      </div>
+      <div class="img-box"></div>
     </div>
   </section>
 
-  <section class="row historia">
-    <div class="text-col">
-      <h2 class="section-title">Historia</h2>
-      <p>Soy venezolano. Nací y viví mis primeros 5 años de mi vida en Caracas, la capital de Venezuela, pero por la situación politica y economica del país, migré al Perú. De toda mi familia, fui el segundo en migrar, donde primero fue el hermano de mi mamá, luego mis tias y mi bisabuela y por ultimo mi abuela. En Perú logramos salir adelante, donde me inscribieron en un colegio inicial donde hice amigos de la infancia que sigo conociendo hasta ahora. Fast foward varios años, el 20 de julio del 2027 cumpliré 10 años en este país, que me vió crecer en toda mi niñez y adolecencia. Pienso volver a mi querida Venezuela, pero probablemente no para quedarme a vivir, sino para revivir recuerdos, visitar mis lugares favoritos como el Ávila, y agarrar el acento de nuevo, ya que lo perdí jeje.</p>
-    </div>
-    <div class="timeline-col">
-      <svg class="timeline-svg" viewBox="0 0 300 520" preserveAspectRatio="xMidYMid meet">
-        <path d="M150,20 Q60,80 60,140 Q60,200 150,260 Q240,320 240,380 Q240,440 150,500"
-              fill="none" stroke="#2a3a5f" stroke-width="3"/>
-        <circle cx="150" cy="20" r="9" class="node"/>
-        <circle cx="60" cy="140" r="9" class="node"/>
-        <circle cx="150" cy="260" r="9" class="node"/>
-        <circle cx="240" cy="380" r="9" class="node"/>
-        <circle cx="150" cy="500" r="9" class="node"/>
-      </svg>
-      <div class="tl-label" style="top:16px; left:168px;">Nací en Caracas, Venezuela</div>
-      <div class="tl-label tl-left" style="top:136px; left:16px;">Migré a Perú</div>
-      <div class="tl-label" style="top:256px; left:168px;">Entré al colegio inicial</div>
-      <div class="tl-label" style="top:376px; left:258px;">Crecí en Perú</div>
-      <div class="tl-label" style="top:496px; left:168px;">Cumpliré 10 años en Perú (2027)</div>
-    </div>
-  </section>
-
-  <section class="habilidades">
-    <h2 class="section-title center">Habilidades</h2>
-    <div class="skills-row">
-      <div class="skill-circle">
-        <span class="skill-name">Matemática</span>
-      </div>
-      <div class="skill-circle">
-        <span class="skill-name">Física</span>
-      </div>
-      <div class="skill-circle">
-        <span class="skill-name">Entender el porqué de las cosas</span>
-      </div>
-      <div class="skill-circle">
-        <span class="skill-name">Astronáutica</span>
+  <section class="section-shell">
+    <div class="row gustos panel">
+      <div class="orb orb-right"></div>
+      <div class="img-box"></div>
+      <div class="text-col text-right">
+        <h2 class="section-title">Mis gustos</h2>
+        <p>A mi me gusta mucho la ciencia: la física, el ambiente, la matemática y, en especial la <em class="accent-word">astronautica</em>. Me encantan los aviones, usar FlightRadar24 para seguirlos y descubrir sus rutas, además de estar enterado los proximos proyectos en el mundo espacial, de agencias como la NASA o la ESA.</p>
+        <p>Tambien me encantan los videojuegos, como <em class="accent-word">Minecraft</em>, Terraria, Roblox, The Last of Us 1 &amp; 2, Pokémon, entre otros. En mi corazón siempre estará un lugar especial para Minecraft, el cual fue el primer videojuego con el que jugué y me enamoré, en es especial porque puedes decidir lo que quieres hacer con tu destino en el mundo cúbico.</p>
+        <p>También me encanta comer. Mi comida favorita es el <em class="accent-word">pabellón venezolano</em>, seguido del tallarín verde, el ceviche, las arepas y la causa peruana. Existen más platos que me gustan y los como con gusto, como el lomo saltado y la cachapa, los cuales ocuparian las "menciones honoríficas".</p>
       </div>
     </div>
   </section>
 
-  <section class="metas">
-    <h2 class="section-title center">Mis Metas</h2>
-    <div class="metas-chart">
-      <svg class="metas-arrow" viewBox="0 0 560 320" preserveAspectRatio="none">
-        <polyline points="0,300 60,270 110,290 170,230 220,250 280,170 330,200 390,110 440,140 500,40 540,20"
-                  fill="none" stroke="#f2b705" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M500,40 L540,20 L528,56" fill="none" stroke="#f2b705" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div class="meta-step meta-1">
-        <p>Estudiar ingeniería aeroespacial: aprender aerodinámica, electrónica, matemática y física avanzada, termodinámica y más.</p>
+  <section class="section-shell">
+    <div class="row historia panel">
+      <div class="text-col">
+        <h2 class="section-title">Historia</h2>
+        <p>Soy venezolano. Nací y viví mis primeros 5 años de mi vida en <em class="accent-word">Caracas</em>, la capital de Venezuela, pero por la situación politica y economica del país, migré al Perú. De toda mi familia, fui el segundo en migrar, donde primero fue el hermano de mi mamá, luego mis tias y mi bisabuela y por ultimo mi abuela. En Perú logramos salir adelante, donde me inscribieron en un colegio inicial donde hice amigos de la infancia que sigo conociendo hasta ahora. Fast foward varios años, el 20 de julio del 2027 cumpliré 10 años en este país, que me vió crecer en toda mi niñez y adolecencia. Pienso volver a mi querida Venezuela, pero probablemente no para quedarme a vivir, sino para revivir recuerdos, visitar mis lugares favoritos como el Ávila, y agarrar el acento de nuevo, ya que lo perdí jeje.</p>
       </div>
-      <div class="meta-step meta-2">
-        <p>Convertirme en el primer astronauta de mi familia.</p>
-      </div>
-      <div class="meta-step meta-3">
-        <p>Convertirme también en el primer millonario de mi familia.</p>
+      <div class="timeline-col">
+        <svg class="timeline-svg" viewBox="0 0 300 520" preserveAspectRatio="xMidYMid meet">
+          <path d="M150,20 Q60,80 60,140 Q60,200 150,260 Q240,320 240,380 Q240,440 150,500"
+                fill="none" stroke="#2a3a5f" stroke-width="3"/>
+          <circle cx="150" cy="20" r="9" class="node"/>
+          <circle cx="60" cy="140" r="9" class="node"/>
+          <circle cx="150" cy="260" r="9" class="node"/>
+          <circle cx="240" cy="380" r="9" class="node"/>
+          <circle cx="150" cy="500" r="9" class="node"/>
+        </svg>
+        <div class="tl-label" style="top:16px; left:168px;"><span class="tl-tag">01</span>Nací en Caracas, Venezuela</div>
+        <div class="tl-label tl-left" style="top:136px; left:0px;">Migré a Perú<span class="tl-tag">02</span></div>
+        <div class="tl-label" style="top:256px; left:168px;"><span class="tl-tag">03</span>Entré al colegio inicial</div>
+        <div class="tl-label" style="top:376px; left:258px;"><span class="tl-tag">04</span>Crecí en Perú</div>
+        <div class="tl-label" style="top:496px; left:168px;"><span class="tl-tag">05</span>Cumpliré 10 años en Perú (2027)</div>
       </div>
     </div>
   </section>
 
-  <section class="row familia">
-    <div class="img-box"></div>
-    <div class="text-col text-right">
-      <h2 class="section-title">Mi Familia</h2>
-      <p>Mi familia es mi prioridad SIEMPRE. Mi perro, mi hermano, mi abuela, mis primos, mis perritas y mis tias entran ahí, pero mi madre es la más importante de todos. Ella siempre estuvo conmigo desde el principio, me apoyó en mis dificultades y juntos pasamos por muchas cosas, por ejemplo emigrar a Perú.</p>
+  <section class="section-shell">
+    <div class="habilidades panel">
+      <h2 class="section-title center">Habilidades</h2>
+      <div class="skills-row">
+        <div class="skill-circle">
+          <span class="skill-name">Matemática</span>
+        </div>
+        <div class="skill-circle">
+          <span class="skill-name">Física</span>
+        </div>
+        <div class="skill-circle">
+          <span class="skill-name">Entender el porqué de las cosas</span>
+        </div>
+        <div class="skill-circle">
+          <span class="skill-name">Astronáutica</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="curioso">
-    <h2 class="section-title center">Dato curioso</h2>
-    <p>Cuando viajé a México por una competencia, nos invitaron a las piramides de Teotihuacan, donde me "tomé prestado" una piedra volcánica del lugar. Nose como pasó por seguridad, pero ahora es la cosa más rara y una de las mas valiosas que tengo.</p>
+  <section class="section-shell metas-shell">
+    <div class="metas panel">
+      <h2 class="section-title center">Mis Metas</h2>
+      <div class="metas-chart">
+        <svg class="metas-arrow" viewBox="0 0 900 600" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f2b705" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#f2b705" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+          <polyline points="0,560 90,520 160,548 250,470 320,500 410,410 480,445 570,350 640,385 730,275 800,310 860,140 890,60"
+                    fill="none" stroke="url(#arrowGrad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M850,90 L890,60 L872,108" fill="none" stroke="#f2b705" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="meta-step meta-1">
+          <span class="tl-tag">01</span>
+          <p>Estudiar <em class="accent-word">ingeniería aeroespacial</em>: aprender aerodinámica, electrónica, matemática y física avanzada, termodinámica y más.</p>
+        </div>
+        <div class="meta-step meta-2">
+          <span class="tl-tag">02</span>
+          <p>Convertirme en el primer <em class="accent-word">astronauta</em> de mi familia.</p>
+        </div>
+        <div class="meta-step meta-3">
+          <span class="tl-tag">03</span>
+          <p>Convertirme también en el primer millonario de mi familia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell">
+    <div class="row familia panel">
+      <div class="img-box"></div>
+      <div class="text-col text-right">
+        <h2 class="section-title">Mi Familia</h2>
+        <p>Mi familia es mi prioridad SIEMPRE. Mi perro, mi hermano, mi abuela, mis primos, mis perritas y mis tias entran ahí, pero mi <em class="accent-word">madre</em> es la más importante de todos. Ella siempre estuvo conmigo desde el principio, me apoyó en mis dificultades y juntos pasamos por muchas cosas, por ejemplo emigrar a Perú.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell">
+    <div class="curioso panel">
+      <h2 class="section-title center">Dato curioso</h2>
+      <p>Cuando viajé a México por una competencia, nos invitaron a las piramides de Teotihuacan, donde me "tomé prestado" una <em class="accent-word">piedra volcánica</em> del lugar. Nose como pasó por seguridad, pero ahora es la cosa más rara y una de las mas valiosas que tengo.</p>
+    </div>
   </section>
 
   <footer>
     <p>Hecho por Martín</p>
   </footer>
+
+  <script>
+    (function () {
+      var container = document.getElementById('stars');
+      var count = 140;
+      for (var i = 0; i < count; i++) {
+        var star = document.createElement('div');
+        star.className = 'star';
+        var size = (Math.random() * 1.6 + 0.6).toFixed(2);
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.top = (Math.random() * 100) + 'vh';
+        star.style.left = (Math.random() * 100) + 'vw';
+        star.style.animationDuration = (3 + Math.random() * 5).toFixed(2) + 's';
+        star.style.animationDelay = (Math.random() * 8).toFixed(2) + 's';
+        container.appendChild(star);
+      }
+    })();
+  </script>
 
 </body>
 </html>
