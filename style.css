@@ -184,6 +184,14 @@ header, section, footer {
   transform: translateY(-4px);
 }
 
+.img-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
 .hero-img {
   min-width: clamp(220px, 24vw, 340px);
   min-height: clamp(220px, 24vw, 340px);
@@ -237,48 +245,30 @@ header, section, footer {
   margin-left: auto;
 }
 
-/* ---- Photo stack (Mis gustos) ---- */
+/* ---- Photo grid (Mis gustos) — fotos separadas, sin superponerse ---- */
 
-.photo-stack {
-  position: relative;
-  width: clamp(260px, 26vw, 320px);
-  height: clamp(300px, 30vw, 360px);
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: clamp(230px, 24vw, 290px);
   flex-shrink: 0;
 }
 
-.stack-photo {
-  position: absolute;
-  width: 78%;
-  height: 68%;
+.grid-photo {
+  width: 100%;
   min-width: 0;
   min-height: 0;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+  aspect-ratio: 4 / 3;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.photo-1 {
-  top: 0;
-  left: 22%;
-  transform: rotate(-7deg);
-  z-index: 1;
-}
+.gp-1 { transform: rotate(-3deg); }
+.gp-2 { transform: rotate(2.5deg); }
+.gp-3 { transform: rotate(-2deg); }
 
-.photo-2 {
-  top: 24%;
-  left: 0;
-  transform: rotate(5deg);
-  z-index: 2;
-}
-
-.photo-3 {
-  top: 48%;
-  left: 18%;
-  transform: rotate(-4deg);
-  z-index: 3;
-}
-
-.stack-photo:hover {
-  transform: rotate(0deg) scale(1.06);
-  z-index: 9;
+.grid-photo:hover {
+  transform: rotate(0deg) scale(1.03);
   box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.7), 0 0 0 6px var(--accent-dim);
 }
 
