@@ -13,6 +13,13 @@
 
   <div class="stars" id="stars"></div>
 
+  <audio id="bg-music" src="audio/dreiton.mp3" loop preload="none"></audio>
+
+  <button id="music-toggle" class="music-toggle" aria-pressed="false" aria-label="Activar música de fondo">
+    <span class="music-icon">♪</span>
+    <span class="music-label">Música</span>
+  </button>
+
   <header class="hero">
     <div class="orb orb-hero"></div>
     <h1 class="hero-title">Hola,<br>soy <em class="accent-word">Martín</em></h1>
@@ -157,6 +164,36 @@
         star.style.animationDelay = (Math.random() * 8).toFixed(2) + 's';
         container.appendChild(star);
       }
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var audio = document.getElementById('bg-music');
+      var btn = document.getElementById('music-toggle');
+      var label = btn.querySelector('.music-label');
+      var icon = btn.querySelector('.music-icon');
+      var playing = false;
+
+      audio.volume = 0.5;
+
+      btn.addEventListener('click', function () {
+        if (!playing) {
+          audio.play();
+          playing = true;
+          btn.classList.add('is-playing');
+          btn.setAttribute('aria-pressed', 'true');
+          icon.textContent = '♫';
+          label.textContent = 'Pausar';
+        } else {
+          audio.pause();
+          playing = false;
+          btn.classList.remove('is-playing');
+          btn.setAttribute('aria-pressed', 'false');
+          icon.textContent = '♪';
+          label.textContent = 'Música';
+        }
+      });
     })();
   </script>
 

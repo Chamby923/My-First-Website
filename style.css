@@ -405,6 +405,65 @@ header, section, footer {
   margin: 0 auto;
 }
 
+/* ---- Music toggle ---- */
+
+.music-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.music-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-dim);
+  transform: translateY(-3px);
+}
+
+.music-toggle.is-playing {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.music-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.music-toggle.is-playing .music-icon {
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+@media (max-width: 900px) {
+  .music-toggle {
+    bottom: 18px;
+    right: 18px;
+    padding: 10px 14px;
+  }
+  .music-label {
+    display: none;
+  }
+}
+
 /* ---- Footer ---- */
 
 footer {
