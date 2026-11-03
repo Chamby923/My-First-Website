@@ -141,6 +141,10 @@ header, section, footer {
   overflow: hidden;
 }
 
+.historia.panel {
+  overflow: visible;
+}
+
 /* ---- Hero ---- */
 
 .hero {
@@ -233,6 +237,51 @@ header, section, footer {
   margin-left: auto;
 }
 
+/* ---- Photo stack (Mis gustos) ---- */
+
+.photo-stack {
+  position: relative;
+  width: clamp(260px, 26vw, 320px);
+  height: clamp(300px, 30vw, 360px);
+  flex-shrink: 0;
+}
+
+.stack-photo {
+  position: absolute;
+  width: 78%;
+  height: 68%;
+  min-width: 0;
+  min-height: 0;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+}
+
+.photo-1 {
+  top: 0;
+  left: 22%;
+  transform: rotate(-7deg);
+  z-index: 1;
+}
+
+.photo-2 {
+  top: 24%;
+  left: 0;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+.photo-3 {
+  top: 48%;
+  left: 18%;
+  transform: rotate(-4deg);
+  z-index: 3;
+}
+
+.stack-photo:hover {
+  transform: rotate(0deg) scale(1.06);
+  z-index: 9;
+  box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.7), 0 0 0 6px var(--accent-dim);
+}
+
 /* ---- Historia / timeline ---- */
 
 .historia .text-col {
@@ -241,8 +290,9 @@ header, section, footer {
 
 .timeline-col {
   position: relative;
-  width: 300px;
-  height: 520px;
+  width: 480px;
+  max-width: 100%;
+  height: 560px;
   flex-shrink: 0;
 }
 
