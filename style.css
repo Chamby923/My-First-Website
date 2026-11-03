@@ -1,33 +1,48 @@
 :root {
-  --bg: #0b1222;
-  --card: #111b32;
-  --text: #e8ecf4;
-  --muted: #a9b4cc;
+  --bg: #0a0f1e;
+  --bg-soft: #0d1526;
+  --card: #121d38;
+  --text: #edf1f9;
+  --muted: #a7b2cc;
   --accent: #f2b705;
-  --line: #2a3a5f;
+  --accent-dim: rgba(242, 183, 5, 0.18);
+  --line: #27365a;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(242,183,5,0.05), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(96,130,255,0.07), transparent 45%),
+    var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.7;
+}
+
+h1, h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
 }
 
 p {
   color: var(--muted);
-  max-width: 520px;
+  max-width: 560px;
+  font-size: clamp(1.05rem, 1.3vw + 0.6rem, 1.3rem);
 }
 
 .section-title {
-  font-size: 2rem;
-  margin: 0 0 20px;
+  font-size: clamp(2.1rem, 2.6vw + 1rem, 3.4rem);
+  margin: 0 0 26px;
   color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 .section-title.center {
@@ -37,68 +52,85 @@ p {
 /* ---- Hero ---- */
 
 .hero {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 90px 32px 50px;
+  padding: 0 40px;
 }
 
 .hero-title {
-  font-size: 3.4rem;
-  line-height: 1.15;
+  font-size: clamp(3.4rem, 7vw, 7.5rem);
+  font-weight: 700;
+  line-height: 1.05;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .img-box {
   background: var(--card);
   border: 1px dashed var(--line);
-  border-radius: 10px;
-  min-width: 220px;
-  min-height: 220px;
+  border-radius: 14px;
+  min-width: 260px;
+  min-height: 260px;
   flex-shrink: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.img-box:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-dim);
+  transform: translateY(-4px);
 }
 
 .hero-img {
-  min-width: 260px;
-  min-height: 260px;
+  min-width: clamp(220px, 24vw, 340px);
+  min-height: clamp(220px, 24vw, 340px);
   border-radius: 50%;
 }
 
 .scroll-btn {
-  display: block;
-  width: fit-content;
-  margin: 0 auto 70px;
-  padding: 10px 26px;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 30px;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.02em;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  transform: translateX(-50%) translateY(-3px);
 }
 
 /* ---- Generic two-column rows ---- */
 
 .row {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  max-width: 1100px;
+  gap: 60px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 32px;
-}
-
-.row-reverse {
-  flex-direction: row-reverse;
+  padding: 90px 40px;
 }
 
 .text-col {
   flex: 1;
-  min-width: 260px;
+  min-width: 280px;
 }
 
 .text-right {
@@ -119,7 +151,7 @@ p {
 .timeline-col {
   position: relative;
   width: 300px;
-  height: 640px;
+  height: 520px;
   flex-shrink: 0;
 }
 
@@ -130,14 +162,21 @@ p {
 
 .node {
   fill: var(--accent);
+  transition: r 0.2s ease, filter 0.2s ease;
+}
+
+.timeline-svg .node:hover {
+  r: 13;
+  filter: drop-shadow(0 0 8px var(--accent));
 }
 
 .tl-label {
   position: absolute;
-  width: 170px;
-  font-size: 0.85rem;
+  width: 190px;
+  font-size: clamp(0.95rem, 1vw + 0.5rem, 1.1rem);
   color: var(--muted);
   transform: translateY(-50%);
+  transition: color 0.2s ease;
 }
 
 .tl-left {
@@ -147,9 +186,14 @@ p {
 /* ---- Habilidades ---- */
 
 .habilidades {
-  max-width: 1100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 32px;
+  padding: 90px 40px;
   text-align: center;
 }
 
@@ -157,42 +201,57 @@ p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 30px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .skill-circle {
-  width: 160px;
-  height: 160px;
+  width: clamp(170px, 16vw, 220px);
+  height: clamp(170px, 16vw, 220px);
   border-radius: 50%;
   border: 1px solid var(--line);
   background: var(--card);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
+  padding: 22px;
   text-align: center;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.skill-circle:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  box-shadow: 0 0 0 8px var(--accent-dim);
+  transform: translateY(-8px);
 }
 
 .skill-name {
   color: var(--accent);
   font-weight: 600;
+  font-size: clamp(1.05rem, 1.1vw + 0.5rem, 1.25rem);
 }
 
 /* ---- Metas ---- */
 
 .metas {
-  max-width: 1100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 32px 110px;
+  padding: 90px 40px;
   text-align: center;
 }
 
 .metas-chart {
   position: relative;
-  max-width: 560px;
+  width: 100%;
+  max-width: 640px;
   margin: 50px auto 0;
-  height: 340px;
+  height: 380px;
 }
 
 .metas-arrow {
@@ -205,21 +264,28 @@ p {
 
 .meta-step {
   position: absolute;
-  width: 230px;
+  width: 250px;
 }
 
 .meta-step p {
   margin: 0;
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 0.9rem;
+  border-radius: 10px;
+  padding: 18px 20px;
+  font-size: clamp(0.95rem, 1vw + 0.5rem, 1.1rem);
   text-align: left;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.meta-step:hover p {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-dim);
+  transform: translateY(-4px);
 }
 
 .meta-1 { left: 0; bottom: 10px; }
-.meta-2 { left: 160px; bottom: 140px; }
+.meta-2 { left: 190px; bottom: 170px; }
 .meta-3 { right: 0; top: 0; }
 
 /* ---- Familia ---- */
@@ -231,9 +297,14 @@ p {
 /* ---- Dato curioso ---- */
 
 .curioso {
-  max-width: 640px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 70px 32px 100px;
+  padding: 90px 40px;
   text-align: center;
 }
 
@@ -245,7 +316,7 @@ p {
 
 footer {
   text-align: center;
-  padding: 24px;
+  padding: 28px;
   color: var(--muted);
   font-size: 0.9rem;
   border-top: 1px solid var(--line);
@@ -253,10 +324,13 @@ footer {
 
 /* ---- Responsive ---- */
 
-@media (max-width: 860px) {
-  .row, .row-reverse {
+@media (max-width: 900px) {
+  .row {
     flex-direction: column;
     text-align: left;
+    min-height: auto;
+    padding: 80px 24px;
+    gap: 40px;
   }
   .text-right, .familia .text-col {
     text-align: left;
@@ -268,7 +342,8 @@ footer {
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 60px;
+    min-height: 100vh;
+    padding-top: 80px;
   }
   .timeline-col {
     width: 100%;
@@ -285,5 +360,9 @@ footer {
   }
   .metas-arrow {
     display: none;
+  }
+  .habilidades, .metas, .curioso {
+    min-height: auto;
+    padding: 80px 24px;
   }
 }
