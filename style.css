@@ -233,7 +233,7 @@ header, section, footer {
 }
 
 .quien-soy-img img {
-  object-position: center;
+  object-position: 60% 20%;
 }
 
 .hero-img {
